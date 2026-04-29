@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sorry Tanisha 🥺💔 — A Plea From Your Noob Friend</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Caveat:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --pink: #ffd6e0;
+    --pink-deep: #e94560;
+    --cream: #fff8e7;
+    --ink: #1a0d05;
+    --red: #c4002b;
+    --yellow: #ffd54f;
+    --green: #7ed957;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background:
+      radial-gradient(circle at 20% 10%, #ffe9f0 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, #fff3c4 0%, transparent 40%),
+      repeating-linear-gradient(45deg, #fff8e7 0 30px, #fff2d6 30px 60px);
+    font-family: 'Space Mono', monospace;
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .bg-heart {
+    position: fixed; font-size: 28px; opacity: 0.5;
+    pointer-events: none; animation: floatup linear infinite; z-index: 0;
+  }
+  @keyframes floatup {
+    from { transform: translateY(110vh) rotate(0deg); }
+    to   { transform: translateY(-20vh) rotate(360deg); }
+  }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 32px 24px 80px; position: relative; z-index: 1; }
+  header { text-align: center; padding: 24px 16px 12px; }
+  .stamp {
+    display: inline-block; border: 3px solid var(--red); color: var(--red);
+    padding: 6px 18px; font-family: 'Space Mono', monospace; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.2em; transform: rotate(-3deg);
+    margin-bottom: 10px; background: rgba(255,255,255,0.6);
+  }
+  h1 {
+    font-family: 'Bungee', sans-serif; font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.9; margin: 0; color: var(--ink);
+    text-shadow: 4px 4px 0 var(--pink-deep), 8px 8px 0 var(--yellow); letter-spacing: -2px;
+  }
+  h1 .wave { display: inline-block; animation: wiggle 0.6s ease-in-out infinite alternate; }
+  @keyframes wiggle { from { transform: rotate(-6deg); } to { transform: rotate(8deg); } }
+  .sub { font-family: 'Caveat', cursive; font-size: clamp(22px, 2.5vw, 32px); margin-top: 18px; color: var(--ink); }
+  .recipient {
+    display: inline-block; background: var(--yellow); padding: 2px 14px;
+    border: 3px solid var(--ink); border-radius: 6px; transform: rotate(-2deg); margin: 0 4px; font-weight: 700;
+  }
+  .confession {
+    background: #fff9b8; border: 3px solid var(--ink); padding: 22px 28px;
+    margin: 30px auto; max-width: 720px; transform: rotate(-1deg);
+    box-shadow: 8px 8px 0 var(--ink); font-family: 'Caveat', cursive; font-size: 24px; line-height: 1.4; position: relative;
+  }
+  .confession::before { content: "📌"; position: absolute; top: -22px; left: 50%; font-size: 36px; transform: translateX(-50%); }
+  .confession h2 { font-family: 'Bungee', sans-serif; font-size: 22px; margin: 0 0 10px; color: var(--red); }
+  #stage-mount { position: relative; width: 100%; height: 720px; max-height: 70vh; }
+  @media (max-width: 1300px) { #stage-mount { height: 56.25vw; max-height: 720px; } }
+  .stage-frame {
+    background: #fffaf0; border: 4px solid var(--ink); border-radius: 16px;
+    box-shadow: 12px 12px 0 var(--ink); margin: 40px auto; overflow: hidden; max-width: 1280px;
+  }
+  .stage-frame .filmstrip {
+    background: var(--ink); color: #fff; padding: 8px 16px;
+    font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .filmstrip .dots { display: flex; gap: 6px; }
+  .filmstrip .dots span { width: 12px; height: 12px; border-radius: 50%; background: var(--pink-deep); }
+  .filmstrip .dots span:nth-child(2) { background: var(--yellow); }
+  .filmstrip .dots span:nth-child(3) { background: var(--green); }
+  .voice-note {
+    background: #25D366; color: #fff; border: 3px solid var(--ink); border-radius: 18px;
+    padding: 18px 22px; max-width: 540px; margin: 40px auto;
+    box-shadow: 8px 8px 0 var(--ink); transform: rotate(1deg); position: relative;
+  }
+  .voice-note::before {
+    content: "📱 voice note from: noob_me"; display: block;
+    font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.15em; margin-bottom: 12px; opacity: 0.85;
+  }
+  .vn-row { display: flex; align-items: center; gap: 14px; }
+  .play-btn {
+    background: #fff; border: 3px solid var(--ink); color: var(--ink);
+    width: 56px; height: 56px; border-radius: 50%; font-size: 22px;
+    cursor: pointer; flex-shrink: 0; box-shadow: 3px 3px 0 var(--ink); transition: transform 0.1s;
+  }
+  .play-btn:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--ink); }
+  .play-btn:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+  .play-btn.playing { background: var(--yellow); }
+  .vn-bars { flex: 1; display: flex; align-items: center; gap: 3px; height: 40px; }
+  .vn-bars span { flex: 1; background: #fff; border-radius: 2px; height: 8px; }
+  .vn-bars.live span { animation: bouncing 0.8s ease-in-out infinite; }
+  .vn-bars.live span:nth-child(2n) { animation-delay: 0.1s; }
+  .vn-bars.live span:nth-child(3n) { animation-delay: 0.25s; }
+  .vn-bars.live span:nth-child(5n) { animation-delay: 0.4s; }
+  @keyframes bouncing { 0%,100% { height: 8px; } 50% { height: 36px; } }
+  .vn-time { font-family: 'Space Mono', monospace; font-size: 13px; opacity: 0.9; }
+  .vn-lyrics {
+    margin-top: 14px; padding: 12px; background: rgba(255,255,255,0.18);
+    border-radius: 10px; font-family: 'Caveat', cursive; font-size: 19px; line-height: 1.4;
+    max-height: 0; overflow: hidden; transition: max-height 0.5s, padding 0.3s;
+    padding-top: 0; padding-bottom: 0;
+  }
+  .vn-lyrics.open { max-height: 320px; padding: 12px; }
+  .vn-lyrics .line { margin: 4px 0; }
+  .vn-lyrics .highlight { background: var(--yellow); color: var(--ink); padding: 0 4px; border-radius: 3px; }
+  .reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin: 50px auto; max-width: 1100px; }
+  .reason-card {
+    background: var(--cream); border: 3px solid var(--ink); border-radius: 10px;
+    padding: 22px; box-shadow: 6px 6px 0 var(--ink); transform: rotate(var(--r,0deg)); transition: transform 0.2s;
+  }
+  .reason-card:hover { transform: rotate(0) scale(1.04); }
+  .reason-card .num { font-family: 'Bungee', sans-serif; font-size: 38px; color: var(--pink-deep); line-height: 1; }
+  .reason-card h3 { font-family: 'Bungee', sans-serif; font-size: 17px; margin: 8px 0 8px; }
+  .reason-card p { font-family: 'Caveat', cursive; font-size: 22px; line-height: 1.3; margin: 0; }
+  .verdict { text-align: center; margin: 60px auto 20px; }
+  .verdict h2 { font-family: 'Bungee', sans-serif; font-size: clamp(28px,4vw,48px); color: var(--ink); margin: 0 0 8px; }
+  .verdict .small { font-family: 'Caveat', cursive; font-size: 22px; margin-bottom: 26px; }
+  .btn-row { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+  .big-btn {
+    font-family: 'Bungee', sans-serif; font-size: 22px; padding: 18px 36px;
+    border: 4px solid var(--ink); border-radius: 12px; cursor: pointer;
+    box-shadow: 6px 6px 0 var(--ink); transition: all 0.1s; color: var(--ink);
+  }
+  .big-btn:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--ink); }
+  .big-btn:active { transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn-yes { background: var(--green); }
+  .btn-no { background: #fff; position: relative; transition: transform 0.3s ease; }
+  .forgiven-banner {
+    display: none; margin: 40px auto; padding: 30px; text-align: center;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--yellow) 100%);
+    border: 4px solid var(--ink); border-radius: 20px; box-shadow: 12px 12px 0 var(--ink);
+    max-width: 720px; transform: rotate(-1deg); animation: pop 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .forgiven-banner.on { display: block; }
+  @keyframes pop { from { transform: rotate(-1deg) scale(0); } to { transform: rotate(-1deg) scale(1); } }
+  .forgiven-banner h2 { font-family: 'Bungee', sans-serif; font-size: 42px; margin: 0 0 8px; color: var(--red); }
+  .forgiven-banner p { font-family: 'Caveat', cursive; font-size: 26px; margin: 8px 0; }
+  .bieber-player {
+    position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff;
+    border: 3px solid var(--yellow); border-radius: 14px; padding: 12px 16px;
+    box-shadow: 6px 6px 0 var(--pink-deep); z-index: 100;
+    font-family: 'Space Mono', monospace; font-size: 12px; max-width: 280px;
+    cursor: pointer; user-select: none;
+  }
+  .bieber-player .label { font-size: 10px; letter-spacing: 0.15em; color: var(--yellow); margin-bottom: 6px; }
+  .bieber-player .row { display: flex; align-items: center; gap: 10px; }
+  .bieber-player .b-play {
+    width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--yellow);
+    background: var(--pink-deep); color: #fff; cursor: pointer; font-size: 14px;
+  }
+  .bieber-player .b-title { line-height: 1.2; }
+  .bieber-player .b-title b { color: var(--yellow); }
+  .bieber-player.playing { animation: pulse 1.2s infinite; }
+  @keyframes pulse {
+    0%,100% { box-shadow: 6px 6px 0 var(--pink-deep); }
+    50% { box-shadow: 6px 6px 0 var(--green), 0 0 30px var(--pink-deep); }
+  }
+  footer { text-align: center; margin: 60px 20px 20px; font-family: 'Caveat', cursive; font-size: 22px; opacity: 0.85; }
+  footer .sig { display: inline-block; border-top: 2px dashed var(--ink); padding-top: 6px; margin-top: 14px; }
+  @media (max-width: 720px) {
+    h1 { text-shadow: 2px 2px 0 var(--pink-deep), 4px 4px 0 var(--yellow); }
+    .stage-frame { box-shadow: 6px 6px 0 var(--ink); }
+  }
+
+  /* ─── Start overlay ─── */
+  #start-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(135deg, #ffe9f0 0%, #fff3c4 50%, #ffd6e0 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; user-select: none;
+  }
+  #start-overlay h2 {
+    font-family: 'Bungee', sans-serif; font-size: clamp(36px, 6vw, 72px);
+    color: var(--ink); text-shadow: 3px 3px 0 var(--pink-deep), 6px 6px 0 var(--yellow);
+    margin: 0 0 12px; text-align: center; padding: 0 20px;
+  }
+  #start-overlay p {
+    font-family: 'Caveat', cursive; font-size: clamp(20px, 3vw, 30px);
+    color: var(--ink); margin: 0 0 40px; text-align: center; padding: 0 20px;
+  }
+  #start-btn {
+    font-family: 'Bungee', sans-serif; font-size: clamp(18px, 2.5vw, 28px);
+    padding: 20px 48px; background: var(--pink-deep); color: #fff;
+    border: 4px solid var(--ink); border-radius: 16px;
+    box-shadow: 8px 8px 0 var(--ink); cursor: pointer;
+    animation: pulse-btn 1.2s ease-in-out infinite;
+  }
+  @keyframes pulse-btn {
+    0%,100% { transform: scale(1); box-shadow: 8px 8px 0 var(--ink); }
+    50% { transform: scale(1.06); box-shadow: 10px 10px 0 var(--ink); }
+  }
+  #start-overlay .note {
+    margin-top: 20px; font-family: 'Space Mono', monospace;
+    font-size: 12px; opacity: 0.6; letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<!-- Start overlay — browser requires user gesture before audio plays -->
+<div id="start-overlay">
+  <h2>🥺 SORRY TANISHA 💔</h2>
+  <p>a message from your noob friend<br/>tap to open (with music)</p>
+  <button id="start-btn">TAP TO BEGIN ▶</button>
+  <div class="note">♫ sorry by justin bieber will play automatically</div>
+</div>
+
+<div id="bg-hearts"></div>
+
+<div class="wrap">
+  <div class="stage-frame">
+    <div class="filmstrip">
+      <span>NOW PLAYING — "the_great_groupchat_betrayal.mp4"</span>
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>
+    <div id="stage-mount"></div>
+  </div>
+
+  <header>
+    <div class="stamp">CASE FILE #404 — FRIENDSHIP NOT FOUND</div>
+    <h1>SORRY <span class="wave">🥺</span><br/>TANISHA</h1>
+    <div class="sub">a desperate apology website for <span class="recipient">Tanisha Saini</span> from one (1) noob</div>
+  </header>
+
+  <div class="confession">
+    <h2>📜 official confession</h2>
+    Bestie, I, the undersigned <b>noob</b>, do hereby admit that I left the WhatsApp group. <br/>
+    It was a <i>terrible</i>, <i>awful</i>, <i>no-good</i>, <i>very bad decision.</i><br/>
+    My finger slipped. My brain was on airplane mode. I am, technically and emotionally, an idiot.<br/>
+    I am <b>noob</b>. I am <b>innocent</b>. Please don't block me. 🙏
+  </div>
+
+  <div class="voice-note" id="voice-note">
+    <div class="vn-row">
+      <button class="play-btn" id="vn-play" aria-label="play voice note">▶</button>
+      <div class="vn-bars" id="vn-bars">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="vn-time" id="vn-time">0:00</div>
+    </div>
+    <div class="vn-lyrics" id="vn-lyrics">
+      <div class="line">हर शाम को गोलगप्पे और आइसक्रीम भी खिलाओगे</div>
+      <div class="line">भूल गए हो जानू तुम तो लभ के संस्कारे</div>
+      <div class="line"><span class="highlight">बेबी ! गुस्सा हो बेबी ? आय ? ना बेबी ना !</span></div>
+      <div class="line">बेबी गुस्सा हो ? नहीं गुस्सा हूँ !</div>
+      <div class="line">ऐ बेबिया गुस्सा हो क्या ? अरे तोरी माई के ..!</div>
+      <div class="line">ना रे !</div>
+      <div class="line">तो बोल क्यों नहीं रहे हो ? 🥺</div>
+    </div>
+  </div>
+
+  <section>
+    <h2 style="font-family:'Bungee',sans-serif;text-align:center;font-size:36px;margin:50px 0 8px;">EVIDENCE OF MY NOOB-NESS</h2>
+    <p style="font-family:'Caveat',cursive;text-align:center;font-size:24px;margin:0 0 30px;">exhibits A through E for the defense</p>
+    <div class="reasons">
+      <div class="reason-card" style="--r:-2deg"><div class="num">01</div><h3>Finger Slipped</h3><p>I was just scrolling. The "Exit Group" button is RIGHT THERE. Whose UX is this?? Not mine.</p></div>
+      <div class="reason-card" style="--r:1.5deg"><div class="num">02</div><h3>Brain.exe Crashed</h3><p>Did not realize this was THE group. I thought it was the spam one. I would never leave you 💔</p></div>
+      <div class="reason-card" style="--r:-1deg"><div class="num">03</div><h3>I Am Noob</h3><p>Look at me. I am tiny. I am soft. I do not understand technology. I press buttons. Mistakes happen.</p></div>
+      <div class="reason-card" style="--r:2deg"><div class="num">04</div><h3>Innocent Soul</h3><p>I have no malicious intent in my body. Only golgappa cravings and good vibes. Forgive me 🥺</p></div>
+      <div class="reason-card" style="--r:-1.5deg"><div class="num">05</div><h3>Will Pay Tax</h3><p>1 plate golgappa + 1 ice cream every shaam, as per the song. Legally binding. I will sign anything.</p></div>
+    </div>
+  </section>
+
+  <div class="verdict">
+    <h2>SO… WILL YOU FORGIVE ME?</h2>
+    <div class="small">click wisely. my entire emotional state depends on it.</div>
+    <div class="btn-row">
+      <button class="big-btn btn-yes" id="btn-yes">YES, NOOB IS FORGIVEN ❤</button>
+      <button class="big-btn btn-no" id="btn-no">no 😤</button>
+    </div>
+  </div>
+
+  <div class="forgiven-banner" id="forgiven">
+    <h2>🎉 BESTIES RESTORED 🎉</h2>
+    <p>tanisha.queen has officially un-blocked noob_me</p>
+    <p>golgappa &amp; ice cream tab: <b>OPEN</b></p>
+    <p style="font-family:'Bungee',sans-serif;font-size:18px;color:var(--ink);margin-top:14px;">~ thank you bestie ~</p>
+  </div>
+
+  <footer>
+    made with 100% genuine regret + 0% planning <br/>
+    <span class="sig">— your noob, forever &amp; always 🤡💚</span>
+  </footer>
+</div>
+
+<div class="bieber-player" id="bieber" title="Click to play / pause Justin Bieber - Sorry">
+  <div class="label">♫ BACKGROUND VIBE</div>
+  <div class="row">
+    <button class="b-play" id="b-play">▶</button>
+    <div class="b-title"><div><b>Sorry</b></div><div style="opacity:0.7">Justin Bieber</div></div>
+  </div>
+</div>
+
+<audio id="audio-hindi" src="baby_gussa_ho_kya.m4a" preload="auto"></audio>
+<audio id="audio-bieber" src="Justin Bieber - Sorry (PURPOSE _ The Movement).mp3" preload="auto" loop></audio>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+// ── animations ────────────────────────────────────────────────────────────
+const Easing = {
+  linear: (t) => t,
+  easeInQuad:    (t) => t * t,
+  easeOutQuad:   (t) => t * (2 - t),
+  easeInOutQuad: (t) => (t < 0.5 ? 2*t*t : -1+(4-2*t)*t),
+  easeInCubic:    (t) => t*t*t,
+  easeOutCubic:   (t) => (--t)*t*t+1,
+  easeInOutCubic: (t) => (t < 0.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1),
+  easeInQuart:    (t) => t*t*t*t,
+  easeOutQuart:   (t) => 1-(--t)*t*t*t,
+  easeInOutQuart: (t) => (t < 0.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t),
+  easeInExpo:  (t) => (t===0?0:Math.pow(2,10*(t-1))),
+  easeOutExpo: (t) => (t===1?1:1-Math.pow(2,-10*t)),
+  easeInSine:    (t) => 1-Math.cos((t*Math.PI)/2),
+  easeOutSine:   (t) => Math.sin((t*Math.PI)/2),
+  easeInOutSine: (t) => -(Math.cos(Math.PI*t)-1)/2,
+  easeOutBack: (t) => { const c1=1.70158,c3=c1+1; return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2); },
+  easeInBack: (t) => { const c1=1.70158,c3=c1+1; return c3*t*t*t-c1*t*t; },
+  easeInOutBack: (t) => { const c1=1.70158,c2=c1*1.525; return t<0.5?(Math.pow(2*t,2)*((c2+1)*2*t-c2))/2:(Math.pow(2*t-2,2)*((c2+1)*(t*2-2)+c2)+2)/2; },
+  easeOutElastic: (t) => { const c4=(2*Math.PI)/3; if(t===0)return 0; if(t===1)return 1; return Math.pow(2,-10*t)*Math.sin((t*10-0.75)*c4)+1; },
+  easeInOutExpo: (t) => { if(t===0)return 0; if(t===1)return 1; if(t<0.5)return 0.5*Math.pow(2,20*t-10); return 1-0.5*Math.pow(2,-20*t+10); },
+};
+
+const clamp = (v,min,max) => Math.max(min,Math.min(max,v));
+
+const TimelineContext = React.createContext({time:0,duration:10,playing:false});
+const useTime = () => React.useContext(TimelineContext).time;
+const useTimeline = () => React.useContext(TimelineContext);
+
+const SpriteContext = React.createContext({localTime:0,progress:0,duration:0});
+const useSprite = () => React.useContext(SpriteContext);
+
+function Sprite({start=0,end=Infinity,children,keepMounted=false}) {
+  const {time} = useTimeline();
+  const visible = time>=start && time<=end;
+  if(!visible && !keepMounted) return null;
+  const duration = end-start;
+  const localTime = Math.max(0,time-start);
+  const progress = duration>0&&isFinite(duration)?clamp(localTime/duration,0,1):0;
+  const value = {localTime,progress,duration,visible};
+  return (
+    <SpriteContext.Provider value={value}>
+      {typeof children==='function'?children(value):children}
+    </SpriteContext.Provider>
+  );
+}
+
+function IconButton({children,onClick,title}) {
+  const [hover,setHover] = React.useState(false);
+  return (
+    <button onClick={onClick} title={title}
+      onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
+      style={{width:28,height:28,display:'flex',alignItems:'center',justifyContent:'center',
+        background:hover?'rgba(255,255,255,0.12)':'rgba(255,255,255,0.04)',
+        border:'1px solid rgba(255,255,255,0.1)',borderRadius:6,color:'#f6f4ef',
+        cursor:'pointer',padding:0,transition:'background 120ms'}}>
+      {children}
+    </button>
+  );
+}
+
+function PlaybackBar({time,duration,playing,onPlayPause,onReset,onSeek,onHover}) {
+  const trackRef = React.useRef(null);
+  const [dragging,setDragging] = React.useState(false);
+  const timeFromEvent = React.useCallback((e)=>{
+    const rect=trackRef.current.getBoundingClientRect();
+    return clamp((e.clientX-rect.left)/rect.width,0,1)*duration;
+  },[duration]);
+  const onTrackMove=(e)=>{ if(!trackRef.current)return; if(dragging)onSeek(timeFromEvent(e)); else onHover(timeFromEvent(e)); };
+  const onTrackLeave=()=>{ if(!dragging)onHover(null); };
+  const onTrackDown=(e)=>{ setDragging(true); onSeek(timeFromEvent(e)); onHover(null); };
+  React.useEffect(()=>{
+    if(!dragging)return;
+    const onUp=()=>setDragging(false);
+    const onMove=(e)=>{ if(trackRef.current)onSeek(timeFromEvent(e)); };
+    window.addEventListener('mouseup',onUp); window.addEventListener('mousemove',onMove);
+    return ()=>{ window.removeEventListener('mouseup',onUp); window.removeEventListener('mousemove',onMove); };
+  },[dragging,timeFromEvent,onSeek]);
+  const pct=duration>0?(time/duration)*100:0;
+  const fmt=(t)=>{ const tot=Math.max(0,t),m=Math.floor(tot/60),s=Math.floor(tot%60),cs=Math.floor((tot*100)%100); return `${m}:${String(s).padStart(2,'0')}.${String(cs).padStart(2,'0')}`; };
+  const mono='JetBrains Mono,ui-monospace,SFMono-Regular,monospace';
+  return (
+    <div style={{display:'flex',alignItems:'center',gap:12,padding:'8px 16px',background:'rgba(20,20,20,0.92)',borderTop:'1px solid rgba(255,255,255,0.08)',width:'100%',maxWidth:680,alignSelf:'center',borderRadius:8,color:'#f6f4ef',fontFamily:'Inter,system-ui,sans-serif',userSelect:'none',flexShrink:0}}>
+      <IconButton onClick={onReset} title="Return to start">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2v10M12 2L5 7l7 5V2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round"/></svg>
+      </IconButton>
+      <IconButton onClick={onPlayPause} title="Play/pause (space)">
+        {playing?(
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="3" y="2" width="3" height="10" fill="currentColor"/><rect x="8" y="2" width="3" height="10" fill="currentColor"/></svg>
+        ):(
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2l9 5-9 5V2z" fill="currentColor"/></svg>
+        )}
+      </IconButton>
+      <div style={{fontFamily:mono,fontSize:12,fontVariantNumeric:'tabular-nums',width:64,textAlign:'right',color:'#f6f4ef'}}>{fmt(time)}</div>
+      <div ref={trackRef} onMouseMove={onTrackMove} onMouseLeave={onTrackLeave} onMouseDown={onTrackDown}
+        style={{flex:1,height:22,position:'relative',cursor:'pointer',display:'flex',alignItems:'center'}}>
+        <div style={{position:'absolute',left:0,right:0,height:4,background:'rgba(255,255,255,0.12)',borderRadius:2}}/>
+        <div style={{position:'absolute',left:0,width:`${pct}%`,height:4,background:'oklch(72% 0.12 250)',borderRadius:2}}/>
+        <div style={{position:'absolute',left:`${pct}%`,top:'50%',width:12,height:12,marginLeft:-6,marginTop:-6,background:'#fff',borderRadius:6,boxShadow:'0 2px 4px rgba(0,0,0,0.4)'}}/>
+      </div>
+      <div style={{fontFamily:mono,fontSize:12,fontVariantNumeric:'tabular-nums',width:64,textAlign:'left',color:'rgba(246,244,239,0.55)'}}>{fmt(duration)}</div>
+    </div>
+  );
+}
+
+function Stage({width=1280,height=720,duration=10,background='#f6f4ef',loop=true,autoplay=true,persistKey='animstage',children}) {
+  const [time,setTime] = React.useState(()=>{
+    try { const v=parseFloat(localStorage.getItem(persistKey+':t')||'0'); return isFinite(v)?clamp(v,0,duration):0; } catch{return 0;}
+  });
+  const [playing,setPlaying] = React.useState(autoplay);
+  const [hoverTime,setHoverTime] = React.useState(null);
+  const [scale,setScale] = React.useState(1);
+  const stageRef=React.useRef(null), canvasRef=React.useRef(null), rafRef=React.useRef(null), lastTsRef=React.useRef(null);
+
+  React.useEffect(()=>{ window.__stageSetPlaying=setPlaying; return()=>{window.__stageSetPlaying=null;}; },[setPlaying]);
+  React.useEffect(()=>{ try{localStorage.setItem(persistKey+':t',String(time));}catch{} },[time,persistKey]);
+
+  React.useEffect(()=>{
+    if(!stageRef.current)return;
+    const el=stageRef.current;
+    const measure=()=>{ const barH=44,s=Math.min(el.clientWidth/width,(el.clientHeight-barH)/height); setScale(Math.max(0.05,s)); };
+    measure();
+    const ro=new ResizeObserver(measure); ro.observe(el); window.addEventListener('resize',measure);
+    return ()=>{ ro.disconnect(); window.removeEventListener('resize',measure); };
+  },[width,height]);
+
+  React.useEffect(()=>{
+    if(!playing){lastTsRef.current=null;return;}
+    const step=(ts)=>{
+      if(lastTsRef.current==null)lastTsRef.current=ts;
+      const dt=(ts-lastTsRef.current)/1000; lastTsRef.current=ts;
+      setTime((t)=>{ let next=t+dt; if(next>=duration){if(loop)next=next%duration;else{next=duration;setPlaying(false);}} return next; });
+      rafRef.current=requestAnimationFrame(step);
+    };
+    rafRef.current=requestAnimationFrame(step);
+    return ()=>{ if(rafRef.current)cancelAnimationFrame(rafRef.current); lastTsRef.current=null; };
+  },[playing,duration,loop]);
+
+  React.useEffect(()=>{
+    const onKey=(e)=>{
+      if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'))return;
+      if(e.code==='Space'){e.preventDefault();setPlaying(p=>!p);}
+      else if(e.code==='ArrowLeft')setTime(t=>clamp(t-(e.shiftKey?1:0.1),0,duration));
+      else if(e.code==='ArrowRight')setTime(t=>clamp(t+(e.shiftKey?1:0.1),0,duration));
+      else if(e.key==='0'||e.code==='Home')setTime(0);
+    };
+    window.addEventListener('keydown',onKey);
+    return ()=>window.removeEventListener('keydown',onKey);
+  },[duration]);
+
+  const displayTime=hoverTime!=null?hoverTime:time;
+  const ctxValue=React.useMemo(()=>({time:displayTime,duration,playing,setTime,setPlaying}),[displayTime,duration,playing]);
+
+  return (
+    <div ref={stageRef} style={{position:'absolute',inset:0,display:'flex',flexDirection:'column',alignItems:'center',background:'#0a0a0a',fontFamily:'Inter,system-ui,sans-serif'}}>
+      <div style={{flex:1,width:'100%',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',minHeight:0}}>
+        <div ref={canvasRef} style={{width,height,background,position:'relative',transform:`scale(${scale})`,transformOrigin:'center',flexShrink:0,boxShadow:'0 20px 60px rgba(0,0,0,0.4)',overflow:'hidden'}}>
+          <TimelineContext.Provider value={ctxValue}>{children}</TimelineContext.Provider>
+        </div>
+      </div>
+      <PlaybackBar time={displayTime} actualTime={time} duration={duration} playing={playing}
+        onPlayPause={()=>setPlaying(p=>!p)} onReset={()=>setTime(0)}
+        onSeek={(t)=>setTime(t)} onHover={(t)=>setHoverTime(t)} />
+    </div>
+  );
+}
+
+// ── scenes ────────────────────────────────────────────────────────────────
+function NoobMe({x=0,y=0,scale=1,sad=true}) {
+  const t=useTime();
+  const blink=Math.sin(t*3)>0.95?0.1:1;
+  const tearY=(t*80)%200;
+  const tearOpacity=sad?Math.max(0,1-tearY/120):0;
+  const wobble=Math.sin(t*2)*3;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale}) rotate(${wobble})`}>
+      <ellipse cx="0" cy="60" rx="55" ry="45" fill="#FFD8B1"/>
+      <circle cx="0" cy="0" r="60" fill="#FFE0BD" stroke="#000" strokeWidth="3"/>
+      <path d="M -55 -20 Q -50 -65 0 -60 Q 50 -65 55 -20 Q 40 -45 20 -40 Q 0 -50 -20 -40 Q -40 -45 -55 -20 Z" fill="#2a1810"/>
+      <ellipse cx="-20" cy="0" rx="14" ry={14*blink} fill="white" stroke="#000" strokeWidth="2"/>
+      <ellipse cx="20" cy="0" rx="14" ry={14*blink} fill="white" stroke="#000" strokeWidth="2"/>
+      <circle cx="-18" cy="2" r={7*blink} fill="#2a1810"/>
+      <circle cx="22" cy="2" r={7*blink} fill="#2a1810"/>
+      <circle cx="-15" cy="-2" r={3*blink} fill="white"/>
+      <circle cx="25" cy="-2" r={3*blink} fill="white"/>
+      <path d="M -35 -20 Q -25 -25 -10 -18" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+      <path d="M 35 -20 Q 25 -25 10 -18" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+      {sad?(
+        <path d="M -15 30 Q 0 18 15 30" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+      ):(
+        <path d="M -18 22 Q 0 38 18 22" stroke="#000" strokeWidth="3" fill="#ff6b8a" strokeLinecap="round"/>
+      )}
+      {sad&&<ellipse cx="-22" cy={15+tearY*0.4} rx="4" ry="7" fill="#5dc1f0" opacity={tearOpacity}/>}
+      <rect x="-50" y="105" width="100" height="22" rx="4" fill="#fff" stroke="#000" strokeWidth="2"/>
+      <text x="0" y="121" textAnchor="middle" fontFamily="monospace" fontSize="13" fontWeight="700">noob_me.exe</text>
+    </g>
+  );
+}
+
+function Tanisha({x=0,y=0,scale=1,angry=true}) {
+  const t=useTime();
+  const steam=(t*200)%300;
+  const tap=Math.sin(t*8)*(angry?4:0);
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      {angry&&[0,1,2].map(i=>(
+        <circle key={i} cx={-30+i*30} cy={-90-((steam+i*80)%200)*0.6}
+          r={6+(i%2)*3} fill="#bbb" opacity={Math.max(0,1-((steam+i*80)%200)/200)}/>
+      ))}
+      <g transform={`rotate(${tap})`}>
+        <ellipse cx="0" cy="65" rx="58" ry="48" fill={angry?"#d94a6e":"#f4a3c2"}/>
+        <circle cx="0" cy="0" r="62" fill="#FFD2A8" stroke="#000" strokeWidth="3"/>
+        <path d="M -62 -10 Q -75 60 -50 100 Q -55 50 -55 0 Q -60 -55 0 -65 Q 60 -55 55 0 Q 55 50 50 100 Q 75 60 62 -10 Q 50 -65 0 -70 Q -50 -65 -62 -10 Z" fill="#1a0d05"/>
+        <circle cx="0" cy="-35" r="4" fill="#c4002b"/>
+        {angry?(
+          <>
+            <path d="M -32 -8 L -8 -2" stroke="#000" strokeWidth="4" strokeLinecap="round"/>
+            <path d="M 32 -8 L 8 -2" stroke="#000" strokeWidth="4" strokeLinecap="round"/>
+            <ellipse cx="-20" cy="6" rx="8" ry="6" fill="white" stroke="#000" strokeWidth="2"/>
+            <ellipse cx="20" cy="6" rx="8" ry="6" fill="white" stroke="#000" strokeWidth="2"/>
+            <circle cx="-20" cy="6" r="5" fill="#000"/>
+            <circle cx="20" cy="6" r="5" fill="#000"/>
+          </>
+        ):(
+          <>
+            <path d="M -30 0 Q -20 -8 -10 0" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+            <path d="M 30 0 Q 20 -8 10 0" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+          </>
+        )}
+        {angry?(
+          <path d="M -18 32 Q 0 22 18 32" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round"/>
+        ):(
+          <path d="M -22 25 Q 0 45 22 25" stroke="#000" strokeWidth="3" fill="#ff6b8a" strokeLinecap="round"/>
+        )}
+        <circle cx="-35" cy="20" r="8" fill="#ff9aae" opacity="0.6"/>
+        <circle cx="35" cy="20" r="8" fill="#ff9aae" opacity="0.6"/>
+        <rect x="-65" y="108" width="130" height="22" rx="4" fill="#fff" stroke="#000" strokeWidth="2"/>
+        <text x="0" y="124" textAnchor="middle" fontFamily="monospace" fontSize="13" fontWeight="700">tanisha.queen</text>
+      </g>
+    </g>
+  );
+}
+
+function Heart({x,y,delay=0,color="#e94560"}) {
+  const t=useTime();
+  const local=Math.max(0,t-delay);
+  const yOff=-local*60, xOff=Math.sin(local*2)*20;
+  const opacity=Math.max(0,1-local/4), sc=0.5+Math.min(local,0.5);
+  return (
+    <g transform={`translate(${x+xOff},${y+yOff}) scale(${sc})`} opacity={opacity}>
+      <path d="M0,-8 C-12,-20 -25,-12 -25,0 C-25,15 0,25 0,25 C0,25 25,15 25,0 C25,-12 12,-20 0,-8 Z" fill={color} stroke="#000" strokeWidth="2"/>
+    </g>
+  );
+}
+
+function WhatsAppGroup({x=0,y=0,leaving=false}) {
+  const t=useTime();
+  const shake=leaving?Math.sin(t*30)*4:0;
+  return (
+    <g transform={`translate(${x+shake},${y})`}>
+      <rect x="-90" y="-60" width="180" height="120" rx="12" fill="#fff" stroke="#000" strokeWidth="3"/>
+      <rect x="-90" y="-60" width="180" height="22" rx="12" fill="#25D366"/>
+      <rect x="-90" y="-50" width="180" height="12" fill="#25D366"/>
+      <text x="0" y="-44" textAnchor="middle" fontFamily="monospace" fontSize="12" fontWeight="700" fill="#fff">FRIENDS 4 EVER 💚</text>
+      <rect x="-78" y="-28" width="90" height="14" rx="4" fill="#f0f0f0"/>
+      <rect x="12" y="-10" width="70" height="14" rx="4" fill="#dcf8c6"/>
+      <rect x="-78" y="8" width="100" height="14" rx="4" fill="#f0f0f0"/>
+      <rect x="-78" y="26" width="60" height="14" rx="4" fill="#f0f0f0"/>
+      {leaving&&<text x="0" y="50" textAnchor="middle" fontFamily="monospace" fontSize="11" fontWeight="700" fill="#c4002b">⚠ noob_me LEFT ⚠</text>}
+    </g>
+  );
+}
+
+function Scene1_TheCrime() {
+  const t=useSprite()?.localTime??0;
+  const exitX=t>2?Math.min((t-2)*400,800):0;
+  const arrowP=Math.min(Math.max((t-1)/1,0),1);
+  return (
+    <g>
+      <text x="640" y="80" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="42" fill="#1a0d05">THE INCIDENT 🚨</text>
+      <text x="640" y="115" textAnchor="middle" fontFamily="monospace" fontSize="18" fill="#c4002b">evidence #001 — april 2026</text>
+      <WhatsAppGroup x={420} y={380} leaving={t>1.5}/>
+      {t>0.8&&(
+        <g opacity={arrowP}>
+          <path d={`M 540 380 Q ${600+arrowP*50} 320 ${700+arrowP*100} 380`} stroke="#c4002b" strokeWidth="4" fill="none" strokeDasharray="8 6"/>
+          <text x="650" y="320" textAnchor="middle" fontFamily="monospace" fontSize="16" fontWeight="700" fill="#c4002b">*poof* gone</text>
+        </g>
+      )}
+      <g transform={`translate(${860+exitX},380)`}>
+        <NoobMe scale={0.9} sad={false}/>
+        {t>2&&<text x="0" y="-100" textAnchor="middle" fontFamily="monospace" fontSize="14" fontWeight="700" fill="#c4002b">"click" 🤡</text>}
+      </g>
+    </g>
+  );
+}
+
+function Scene2_Realization() {
+  const t=useSprite()?.localTime??0;
+  const shake=t<1?Math.sin(t*40)*6:0;
+  return (
+    <g>
+      <text x="640" y="80" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="42" fill="#1a0d05">REALIZATION HITS 💥</text>
+      <text x="640" y="115" textAnchor="middle" fontFamily="monospace" fontSize="18" fill="#1a0d05">ohhh nooo what have i done</text>
+      <g transform={`translate(${640+shake},380)`}><NoobMe scale={1.4} sad={true}/></g>
+      {t>1&&(
+        <g opacity={Math.min(t-1,1)}>
+          <ellipse cx="900" cy="280" rx="160" ry="80" fill="#fff" stroke="#000" strokeWidth="3"/>
+          <circle cx="800" cy="340" r="14" fill="#fff" stroke="#000" strokeWidth="3"/>
+          <circle cx="780" cy="370" r="8" fill="#fff" stroke="#000" strokeWidth="3"/>
+          <text x="900" y="270" textAnchor="middle" fontFamily="monospace" fontSize="15" fontWeight="700">wait... was that</text>
+          <text x="900" y="290" textAnchor="middle" fontFamily="monospace" fontSize="15" fontWeight="700">tanisha's group???</text>
+          <text x="900" y="312" textAnchor="middle" fontFamily="monospace" fontSize="22">😱</text>
+        </g>
+      )}
+    </g>
+  );
+}
+
+function Scene3_Angry() {
+  const t=useSprite()?.localTime??0;
+  const lightning=Math.floor(t*4)%2===0;
+  return (
+    <g>
+      {lightning&&t<2&&<rect x="0" y="0" width="1280" height="720" fill="#fff" opacity="0.3"/>}
+      <text x="640" y="80" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="42" fill="#c4002b">TANISHA = FURIOUS 🔥</text>
+      <text x="640" y="115" textAnchor="middle" fontFamily="monospace" fontSize="18" fill="#1a0d05">threat level: maximum biryani-withholding</text>
+      <Tanisha x={640} y={380} scale={1.5} angry={true}/>
+      {t>0.5&&(
+        <g opacity={Math.min(t-0.5,1)}>
+          <rect x="850" y="295" width="340" height="90" rx="12" fill="#fff" stroke="#000" strokeWidth="3"/>
+          <path d="M 850 345 L 800 355 L 870 365 Z" fill="#fff" stroke="#000" strokeWidth="3"/>
+          <text x="1020" y="325" textAnchor="middle" fontFamily="monospace" fontSize="15" fontWeight="700" fill="#c4002b">you leaved the group 😤</text>
+          <text x="1020" y="355" textAnchor="middle" fontFamily="monospace" fontSize="15" fontWeight="700" fill="#1a0d05">now i am angry. very angry.</text>
+        </g>
+      )}
+    </g>
+  );
+}
+
+function Scene4_Apology() {
+  const t=useSprite()?.localTime??0;
+  const hearts=[];
+  for(let i=0;i<12;i++){
+    if(t>i*0.3) hearts.push(<Heart key={i} x={500+(i*67)%280} y={500+(i*43)%80} delay={i*0.3} color={["#e94560","#ff9aae","#c4002b","#ff6b8a"][i%4]}/>);
+  }
+  return (
+    <g>
+      <text x="640" y="80" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="42" fill="#c4002b">I AM SO SORRY 🙏</text>
+      <text x="640" y="115" textAnchor="middle" fontFamily="monospace" fontSize="18" fill="#1a0d05">offering: 1 (one) entire kneeling friend</text>
+      <g transform="translate(640,420)">
+        <ellipse cx="0" cy="80" rx="80" ry="30" fill="#1a0d05" opacity="0.2"/>
+        <NoobMe scale={1.2} sad={true}/>
+      </g>
+      {hearts}
+      {t>1&&(
+        <g transform={`translate(640,230) rotate(${Math.sin(t*2)*4})`} opacity={Math.min(t-1,1)}>
+          <rect x="-180" y="-30" width="360" height="50" rx="6" fill="#fff8d6" stroke="#000" strokeWidth="3"/>
+          <text x="0" y="3" textAnchor="middle" fontFamily="monospace" fontSize="20" fontWeight="700" fill="#1a0d05">i am noob &amp; innocent 🥺</text>
+        </g>
+      )}
+    </g>
+  );
+}
+
+function Scene5_Forgive() {
+  const t=useSprite()?.localTime??0;
+  const hugProgress=Math.min(t/2,1);
+  const dx=200-200*hugProgress;
+  const confetti=[];
+  if(t>1.8){
+    for(let i=0;i<30;i++){
+      const ct=t-1.8;
+      const cx=640+Math.cos(i)*300+Math.sin(i*7)*100;
+      const cy=200+(ct*200+i*30)%600;
+      confetti.push(<rect key={i} x={cx} y={cy} width="10" height="14"
+        fill={["#e94560","#ffd54f","#5dc1f0","#7ed957","#c4002b"][i%5]}
+        transform={`rotate(${ct*200+i*40} ${cx+5} ${cy+7})`}/>);
+    }
+  }
+  return (
+    <g>
+      <text x="640" y="80" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="42" fill="#1a0d05">FORGIVENESS ARC ✨</text>
+      <text x="640" y="115" textAnchor="middle" fontFamily="monospace" fontSize="18" fill="#1a0d05">golgappe + ice cream loading...</text>
+      <NoobMe x={500+dx*0.5} y={400} scale={1} sad={t<2}/>
+      <Tanisha x={780-dx*0.5} y={400} scale={1} angry={t<1.5}/>
+      {confetti}
+      {t>2&&<g opacity={Math.min(t-2,1)}><text x="640" y="600" textAnchor="middle" fontFamily="'Bungee',system-ui" fontSize="38" fill="#c4002b">❤ BESTIES RESTORED ❤</text></g>}
+    </g>
+  );
+}
+
+// ── App ───────────────────────────────────────────────────────────────────
+function App() {
+  return (
+    <Stage width={1280} height={720} duration={20} background="#fff5e1" loop={true}>
+      <svg width="1280" height="720" viewBox="0 0 1280 720" style={{position:'absolute',inset:0}}>
+        <Sprite start={0} end={3.5}><Scene1_TheCrime/></Sprite>
+        <Sprite start={3.5} end={7}><Scene2_Realization/></Sprite>
+        <Sprite start={7} end={10.5}><Scene3_Angry/></Sprite>
+        <Sprite start={10.5} end={14.5}><Scene4_Apology/></Sprite>
+        <Sprite start={14.5} end={20}><Scene5_Forgive/></Sprite>
+      </svg>
+    </Stage>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('stage-mount'));
+root.render(<App/>);
+</script>
+
+<script>
+// ─── Floating hearts ───
+(function(){
+  const c=document.getElementById('bg-hearts');
+  const h=['💔','💚','💛','💖','🥺','🌸','✨','🍦','🥟'];
+  for(let i=0;i<22;i++){
+    const el=document.createElement('div'); el.className='bg-heart';
+    el.textContent=h[i%h.length]; el.style.left=Math.random()*100+'vw';
+    el.style.animationDuration=(12+Math.random()*14)+'s';
+    el.style.animationDelay=-(Math.random()*18)+'s';
+    el.style.fontSize=(18+Math.random()*28)+'px';
+    c.appendChild(el);
+  }
+})();
+
+// ─── Hindi voice note ───
+const hindiAudio = document.getElementById('audio-hindi');
+let isVnPlaying = false, vnRaf = null;
+const vnPlay=document.getElementById('vn-play'), vnTime=document.getElementById('vn-time');
+const vnBars=document.getElementById('vn-bars'), vnLyrics=document.getElementById('vn-lyrics');
+
+function fmtTime(s){ const m=Math.floor(s/60),r=Math.floor(s%60); return m+':'+String(r).padStart(2,'0'); }
+
+function startVoiceNote(){
+  isVnPlaying=true; vnPlay.textContent='⏸'; vnPlay.classList.add('playing');
+  vnBars.classList.add('live'); vnLyrics.classList.add('open');
+  hindiAudio.currentTime=0; hindiAudio.play();
+  (function tick(){ if(!isVnPlaying)return; vnTime.textContent=fmtTime(hindiAudio.currentTime); vnRaf=requestAnimationFrame(tick); })();
+}
+function stopVoiceNote(){
+  isVnPlaying=false; hindiAudio.pause(); vnPlay.textContent='▶';
+  vnPlay.classList.remove('playing'); vnBars.classList.remove('live');
+  if(vnRaf)cancelAnimationFrame(vnRaf); vnTime.textContent='0:00';
+}
+hindiAudio.addEventListener('ended', stopVoiceNote);
+vnPlay.addEventListener('click', ()=>{ if(isVnPlaying)stopVoiceNote(); else startVoiceNote(); });
+
+// ─── Bieber ───
+const bieberAudio = document.getElementById('audio-bieber');
+const bieberBox=document.getElementById('bieber'), bPlay=document.getElementById('b-play');
+let bieberPlaying=false;
+
+function startBieber(){ bieberPlaying=true; bPlay.textContent='⏸'; bieberBox.classList.add('playing'); bieberAudio.play(); }
+function stopBieber(){ bieberPlaying=false; bPlay.textContent='▶'; bieberBox.classList.remove('playing'); bieberAudio.pause(); }
+
+bPlay.addEventListener('click',(e)=>{ e.stopPropagation(); if(bieberPlaying)stopBieber(); else startBieber(); });
+bieberBox.addEventListener('click',()=>{ if(bieberPlaying)stopBieber(); else startBieber(); });
+
+// ─── Start overlay — fires music immediately on tap ───
+const startOverlay = document.getElementById('start-overlay');
+const startBtn = document.getElementById('start-btn');
+function dismissOverlay(){
+  startBieber();
+  startOverlay.style.transition = 'opacity 0.5s';
+  startOverlay.style.opacity = '0';
+  setTimeout(()=>{ startOverlay.style.display='none'; }, 500);
+}
+startOverlay.addEventListener('click', dismissOverlay);
+
+// ─── Forgive button ───
+const btnYes=document.getElementById('btn-yes'), btnNo=document.getElementById('btn-no');
+const forgiven=document.getElementById('forgiven');
+let noTries=0;
+btnNo.addEventListener('mouseenter',()=>{
+  noTries++;
+  const dx=(Math.random()*400-200), dy=(Math.random()*200-100);
+  btnNo.style.transform=`translate(${dx}px,${dy}px) rotate(${dx/8}deg)`;
+  if(noTries>3)btnNo.textContent='pls click yes 🥺';
+  if(noTries>6)btnNo.textContent='i am begging you 😭';
+});
+btnNo.addEventListener('click',()=>{ alert("nope, that button doesn't work. only YES works. sorry-not-sorry 💚"); });
+
+function celebrate(){
+  forgiven.classList.add('on');
+  const colors=['#e94560','#ffd54f','#7ed957','#5dc1f0','#c4002b'];
+  for(let i=0;i<80;i++){
+    const c=document.createElement('div');
+    c.style.cssText=`position:fixed;left:50%;top:50%;width:12px;height:16px;background:${colors[i%colors.length]};pointer-events:none;z-index:200;border-radius:2px;`;
+    document.body.appendChild(c);
+    const angle=Math.random()*Math.PI*2, dist=200+Math.random()*600;
+    c.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist+200}px) rotate(${720*(Math.random()-0.5)}deg)`,opacity:0}],
+      {duration:1800+Math.random()*800,easing:'cubic-bezier(.2,.6,.4,1)'});
+    setTimeout(()=>c.remove(),2800);
+  }
+  const rect=forgiven.getBoundingClientRect();
+  window.scrollTo({top:window.scrollY+rect.top-window.innerHeight/2+rect.height/2,behavior:'smooth'});
+}
+btnYes.addEventListener('click',()=>{ celebrate(); if(!bieberPlaying)startBieber(); });
+</script>
+
+</body>
+</html>
